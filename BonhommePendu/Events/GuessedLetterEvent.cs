@@ -1,3 +1,4 @@
+using System.Reflection.Metadata.Ecma335;
 using BonhommePendu.Models;
 
 namespace BonhommePendu.Events
@@ -6,11 +7,16 @@ namespace BonhommePendu.Events
     public class GuessedLetterEvent : GameEvent
     {
         public override string EventType { get { return "GuessedLetter"; } }
-        
+        //public char Letter { get; set; }
         // TODO: Compléter
         public GuessedLetterEvent(GameData gameData, char letter)
         {
-            
+            if (!gameData.GuessedLetters.Contains(letter))
+            {
+                gameData.GuessedLetters.Add(letter);
+                //Letter = letter;
+            }
         }
+        
     }
 }

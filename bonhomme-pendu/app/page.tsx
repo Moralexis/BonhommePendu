@@ -72,6 +72,7 @@ export default function Home() {
   }
 
   async function applyEvent(event:any){
+    /*console.log(any);*/
     switch(event.eventType){
       case "WrongGuess": {
         setNbWrongGuesses((prev) => prev + 1);
